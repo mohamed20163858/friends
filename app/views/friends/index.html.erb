@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Friends</h1>
+
+<table class="table table-striped table-bordered table-hover" id="friends">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Twitter</th>
+      <th scope="col">Show this friend</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each_with_index do |friend| %>
+    <tr id="<%= dom_id friend %>">
+      <%= render friend %>
+      <td>
+        <%= link_to "link", friend %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New friend", new_friend_path, class: "btn btn-secondary" %>
