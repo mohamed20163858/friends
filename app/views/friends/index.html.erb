@@ -10,17 +10,20 @@
       <th scope="col">Email</th>
       <th scope="col">Phone</th>
       <th scope="col">Twitter</th>
+      <th scope="col">User_id</th>
       <th scope="col">Show this friend</th>
     </tr>
   </thead>
   <tbody>
     <% @friends.each_with_index do |friend| %>
+    <% if friend.user == current_user %>
     <tr id="<%= dom_id friend %>">
       <%= render friend %>
       <td>
         <%= link_to "link", friend %>
       </td>
     </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>

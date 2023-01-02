@@ -37,6 +37,9 @@
   </div>
 
   <div>
+    <%= form.text_field :user_id, value: current_user.id, type: :hidden , class: "form-control" %>
+  </div>
+  <div>
     <br/>
     <%= form.submit class: "btn btn-secondary" %>
   </div>
